@@ -41,7 +41,6 @@ public class TestActivity extends BaseActivity {
             mTv.setText(bean.get(0).getTitle());
         } else {
             mTv.setText(bean.get(1).getTitle());
-
         }
     }
 
