@@ -10,6 +10,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+        resValue "string", "au_provider_file_authorities", "com.sailei.mvpdemo.fileprovider"
     }
     buildTypes {
         release {
@@ -35,4 +36,5 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'//配合rxjava2
     implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'//拦截器
     implementation 'com.jakewharton:butterknife:7.0.0'
+    implementation project(':slibrary')
 }

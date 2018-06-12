@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import com.sailei.mvpdemo.bean.MessageCenterBean;
 import com.sailei.mvpdemo.view.BaseActivity;
+import com.sailei.slibrary.SL;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         present.getData(1, mRetrofitService.getMessageCenter());
+        SL.toast().showShortToast("fdfasfdf");
     }
 
 

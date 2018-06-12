@@ -1,0 +1,51 @@
+一、在自己的工程中导入slibrary模块
+二、在app下的build.gradle的依赖中引入implementation project(':slibrary')
+三、自定义application，在onCreate方法中 调用SL.init(this);初始化SL统一管理类
+四、使用 eg SL.toast().showToast("fdsfdf");此为Toast的使用方式，其他的以此类推，基本上都是见名知意
+
+    具体：utils包下
+
+    ConstTool                       存储相关常量
+    app-->AppTool                   获取当前应用版本名、版本号、App名
+    density-->DensityTool           单位换算dp2px、sp2px、px2dp、px2sp
+    device-->DeviceTool             获取手机设备信息
+    keyboard-->KeyBoardTool         键盘打开关闭
+    log-->LogTool                   封装日志打印工具，tag为当前类名，可显示日志行以及调用方法
+    network-->NetworkTool           网络相关
+    reg-->RegTool                   正则匹配包括手机号、身份证、邮箱等的验证
+    sp-->SpTool                     SharedPreferences本地存储工具类
+    time-->TimeTool                 时间日期转换
+    toast-->ToastTool               Toast简单封装 // 连续调用不会连续弹出，只是替换文本
+    view-->PickerViewTool           选择器（选择性别、job、生日）
+    compress-->LuBanCompressTool
+               CompressHelperTool   文件压缩
+    webview-->AgentwebTool          webview
+
+    -----------------AgentwebTool使用方法-------------------
+
+    //目前只有activity中使用
+
+    SL.agentwebview().init(this, ll, "http://www.baidu.com");
+
+        @Override
+        protected void onResume() {
+            SL.agentwebview().onResume();
+            super.onResume();
+        }
+
+        @Override
+        public boolean onKeyDown(int keyCode, KeyEvent event) {
+            if (SL.agentwebview().onKeyDown(keyCode, event)) {
+                return true;
+            }
+            return super.onKeyDown(keyCode, event);
+        }
+
+        @Override
+        protected void onDestroy() {
+            SL.agentwebview().onDestroy();
+            super.onDestroy();
+        }
+     -----------------AgentwebTool使用方法-------------------
+
+     导航栏参考：https://github.com/H07000223/FlycoTabLayout
